@@ -1,4 +1,7 @@
+import { read, save } from './ReadSave.js';
+
 export default class KanbanAPI {
+  // Read
   static getItems(columnId) {
     const column = read().find(column => column.id === columnId);
 
@@ -9,10 +12,12 @@ export default class KanbanAPI {
     return column.items;
   }
 
+  // Create
   static insertItem(columnId, content) {
     const data = read();
     const column = data.find(column => column.id === columnId);
     const item = {
+      // server가 없어서 id 랜덤생성
       id: Math.floor(Math.random() * 1000000),
       content
     };
@@ -27,6 +32,7 @@ export default class KanbanAPI {
     return item;
   }
 
+  // Update
   static updateItem(itemId, newProps) {
     const data = read();
     const [item, currentColumn] = (() => {
@@ -45,7 +51,7 @@ export default class KanbanAPI {
 
     item.content = newProps.content === undefined ? item.content : newProps.content;
 
-    // Update column and position
+    // 열과 위치를 업데이트
     if (
       newProps.columnId !== undefined
       && newProps.position !== undefined
@@ -56,16 +62,17 @@ export default class KanbanAPI {
         throw new Error('Target column not found');
       }
 
-      // Delete the item from it's current column
+      // 현재 열에서 삭제
       currentColumn.items.splice(currentColumn.items.indexOf(item), 1);
 
-      // Move item into it's new column and position
+      // 새로운 열에 들어갈 때
       targetColumn.items.splice(newProps.position, 0, item);
     }
 
     save(data);
   }
 
+  // Delete
   static deleteItem(itemId) {
     const data = read();
 
@@ -79,31 +86,4 @@ export default class KanbanAPI {
 
     save(data);
   }
-}
-
-function read() {
-  const json = localStorage.getItem('kanban-data');
-
-  if (!json) {
-    return [
-      {
-        id: 1,
-        items: []
-      },
-      {
-        id: 2,
-        items: []
-      },
-      {
-        id: 3,
-        items: []
-      },
-    ];
-  }
-
-  return JSON.parse(json);
-}
-
-function save(data) {
-  localStorage.setItem('kanban-data', JSON.stringify(data));
 }

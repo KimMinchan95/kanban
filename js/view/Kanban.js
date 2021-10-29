@@ -1,5 +1,4 @@
 import Column from './Column.js';
-
 export default class Kanban {
   constructor(root) {
     this.root = root;
@@ -12,19 +11,21 @@ export default class Kanban {
   }
 
   static columns() {
-    return [
+    const groups = [
       {
         id: 1,
-        title: "Not Started"
+        title: "시작 전"
       },
       {
         id: 2,
-        title: "in Progress"
+        title: "진행 중"
       },
       {
         id: 3,
-        title: "Completed"
+        title: "완료 목록"
       },
     ];
+
+    return groups;
   }
 }

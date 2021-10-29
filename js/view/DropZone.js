@@ -1,7 +1,9 @@
 import KanbanAPI from '../api/KanbanAPI.js';
 
+// 드랍존: 칸반을 옮길 위치에 형광줄로 표시
 export default class DropZone {
   static createDropZone() {
+    // 인접한 부분을 선택
     const range = document.createRange();
 
     range.selectNode(document.body);
@@ -10,15 +12,18 @@ export default class DropZone {
       <div class='kanban__dropzone'></div>
     `).children[0];
 
+    // 마우스가 대상 DropZone 위에 있을때, 형광색 줄을 활성화
     dropZone.addEventListener('dragover', event => {
       event.preventDefault();
       dropZone.classList.add('kanban__dropzone--active');
     });
 
+    // 마우스가 DropZone을 벗어났을때 형광색 줄을 비활성화
     dropZone.addEventListener('dragleave', () => {
       dropZone.classList.remove('kanban__dropzone--active');
     });
 
+    // DropZone에 Item을 놨을때
     dropZone.addEventListener('drop', event => {
       event.preventDefault();
       dropZone.classList.remove('kanban__dropzone--active');
