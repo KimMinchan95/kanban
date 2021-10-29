@@ -2,6 +2,12 @@
 
 KanBan Board 공부를 위한 사이드 프로젝트
 
+Stack
+--
+- JavaScript
+- Html
+- Css
+
 기능 목록
 --
 ### 새로만들기로 생성
