@@ -24,3 +24,5 @@ Stack
 
 ### 드래그 앤 드롭
 ![rc3HNg5QkS](https://user-images.githubusercontent.com/83770790/139481820-d574960f-023b-4fba-8ce5-5aa4bc3ec7bb.gif)
+
+**타입스크립트 공부후 리팩토링 예정**
