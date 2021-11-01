@@ -7,15 +7,15 @@ function read() {
     return [
       {
         id: 1,
-        items: [{id: 1, content: '새로 만들기로 칸반 생성'}]
+        items: [{id: 324315, content: '새로 만들기로 칸반 생성'}]
       },
       {
         id: 2,
-        items: [{id: 2, content: '더블클릭으로 삭제 가능'}, {id: 3, content: '클릭시 변경'}]
+        items: [{id: 19395, content: '더블클릭으로 삭제 가능'}, {id: 162153, content: '클릭시 변경'}]
       },
       {
         id: 3,
-        items: [{id: 4, content: '로컬스토리지에 저장'}]
+        items: [{id: 34234, content: '로컬스토리지에 저장'}]
       },
     ];
   }
