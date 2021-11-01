@@ -2,6 +2,9 @@
 
 KanBan Board 공부를 위한 사이드 프로젝트
 
+# 사용방법
+npm install로 http-server 설치 -> npx http-server로 서버를 킴 -> index.html를 켜서 서버에 들어가기
+
 Stack
 --
 - JavaScript
