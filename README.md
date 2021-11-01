@@ -3,7 +3,7 @@
 KanBan Board 공부를 위한 사이드 프로젝트
 
 # 사용방법
-npm install로 http-server 설치 -> npx http-server로 서버를 킴 -> index.html를 켜서 서버에 들어가기
+npm install로 http-server 설치 -> npx http-server로 서버를 킴 -> 터미널에 Avilable on 목록 중 하나를 ctrl + 마우스 클릭으로 선택
 
 Stack
 --
