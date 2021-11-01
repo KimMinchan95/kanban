@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/KimMinchan95/kanban/issues"
   },
-  "homepage": "https://github.com/KimMinchan95/kanban#readme"
+  "homepage": "https://github.com/KimMinchan95/kanban#readme",
+  "dependencies": {
+    "http-server": "^14.0.0"
+  }
 }
